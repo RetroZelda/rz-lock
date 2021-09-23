@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# screenshot, blur, then lock the machine
+scrot -o /tmp/screenshot.png
+convert /tmp/screenshot.png -filter Gaussian -blur 0x8 /tmp/screenshot_blur.png
+i3lock -i /tmp/screenshot_blur.png 
+
+rm -f /tmp/screenshot.png
+rm -f /tmp/screenshot_blur.png
+
